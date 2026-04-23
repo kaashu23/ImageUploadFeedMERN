@@ -1,10 +1,13 @@
-const mongoose = require('mongoose');
-
-const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://kashish:kashish@imagegallery.gpnrfyi.mongodb.net/imageproject';
+const mongoose = require("mongoose");
 
 async function connectDB() {
-    await mongoose.connect(MONGO_URI);
-    console.log('Connected to MongoDB');
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("Connected to MongoDB");
+  } catch (error) {
+    console.error("MongoDB connection failed:", error);
+    process.exit(1);
+  }
 }
 
 module.exports = connectDB;
