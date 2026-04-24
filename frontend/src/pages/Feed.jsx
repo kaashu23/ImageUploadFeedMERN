@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 const Feed = () => {
 
-    const API = "https://imageuploaderfeedmernbackend.onrender.com";x
+    const API = "https://imageuploaderfeedmernbackend.onrender.com";
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
