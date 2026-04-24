@@ -3,10 +3,11 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 const Feed = () => {
 
+    const API = "https://imageuploaderfeedmernbackend.onrender.com";x
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        axios.get("http://localhost:3000/posts")
+        axios.get(`${API}/posts`)
         .then((res)=>{
             console.log(res.data.posts)
             setPosts(res.data.posts)
