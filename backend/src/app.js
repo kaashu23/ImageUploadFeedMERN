@@ -7,7 +7,10 @@ const postModel = require("./models/post.model");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://imageuploadermern.netlify.app",
+  methods: ["GET", "POST"],
+}));
 app.use(express.json());
 
 const upload = multer({ storage: multer.memoryStorage() });
