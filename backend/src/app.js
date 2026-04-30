@@ -53,4 +53,9 @@ app.get("/posts", async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
+
+
 module.exports = app;
